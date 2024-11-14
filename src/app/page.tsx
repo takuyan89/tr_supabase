@@ -3,7 +3,8 @@ const Page = async () => {
     cache: "no-store",
   });
 
-  const { tasks } = await response.json();
+  // 修正: 直接配列としてレスポンスを受け取る
+  const tasks = await response.json();
 
   return (
     <main>

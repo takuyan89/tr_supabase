@@ -14,18 +14,18 @@ export const POST = async (request: NextRequest) => {
     );
   }
 
-  return NextResponse.json({ response }, { status: 200 });
+  return NextResponse.json(response, { status: 200 });
 };
 
 export const GET = async (request: NextRequest) => {
-  const response = await getTaskList;
+  const response = await getTaskList();
 
   if (!response) {
     return NextResponse.json(
-      { error: "Failed to create task" },
+      { error: "Failed to fetch task list" },
       { status: 500 }
     );
   }
 
-  return NextResponse.json({ response }, { status: 200 });
+  return NextResponse.json(response, { status: 200 });
 };
